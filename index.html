@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Expense Tracker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-purple-600 to-purple-800 text-white min-h-screen">
+  <header class="text-center py-6">
+    <h1 class="text-3xl font-bold">Trip Expense Tracker</h1>
+  </header>
+  <main class="container mx-auto px-4">
+
+    <section id="add-expense" class="bg-white text-black shadow-lg rounded-lg p-6 mb-8">
+      <h2 class="text-xl font-semibold mb-4 text-center">Add Expense</h2>
+      <form id="expense-form" class="space-y-4">
+        <input type="text" id="payer" class="w-full p-2 border rounded-md" placeholder="Who Paid?" required>
+        <input type="number" id="amount" class="w-full p-2 border rounded-md" placeholder="Amount (₹)" required>
+        <input type="text" id="description" class="w-full p-2 border rounded-md" placeholder="Description (e.g., Lunch)" required>
+        <input type="text" id="participants" class="w-full p-2 border rounded-md" placeholder="Participants (comma-separated)" required>
+        <div class="flex justify-center">
+          <button type="submit" class="bg-orange-500 text-white py-2 px-6 rounded-full hover:bg-orange-600">
+            Add Expense
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section id="expense-list" class="bg-white text-black shadow-lg rounded-lg p-6 mb-8">
+      <h2 class="text-xl font-semibold mb-4 text-center">Expense History</h2>
+      <ul id="expenses" class="space-y-2"></ul>
+    </section>
+    
+    <section id="balances" class="bg-white text-black shadow-lg rounded-lg p-6">
+      <h2 class="text-xl font-semibold mb-4 text-center">Balances</h2>
+      <ul id="balance-list" class="space-y-2"></ul>
+      <div class="text-center mt-4">
+        <button id="settle-button" class="bg-orange-500 text-white py-2 px-6 rounded-full hover:bg-orange-600">
+          Settle Balances
+        </button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
